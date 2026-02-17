@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 2 EC</title>
+</head>
+<body>
+    <script language="javascript">
+        states = ['Virginia', 'New York', 'North Carolina', 'South Carolina', 'Mississippi', 'New Jersey', 'Maine', 'Alaska', 'Texas', 'California']
+        states.sort()
+
+        window.onload = function() {
+            content = ""
+            states.forEach(function(state, i) {
+                if (i == 0) {
+                    content += "<option selected id='" + state + "'>" + state + "</option>"
+                } else {
+                    content += "<option id='" + state + "'>" + state + "</option>";
+                }
+            })
+            document.getElementById("stateSelector").innerHTML = content
+            document.getElementById("addButton").onclick = addState;
+            document.getElementById("clearState").onclick = clearStates;
+        }
+
+        function addState() {
+            i = stateSelector.selectedIndex
+            stateText = stateSelector.options[i].text;
+            document.getElementById("state-list").innerHTML += "<li>" + stateText + "</li>"
+            document.getElementById(stateText).remove()
+        }
+
+        function clearStates() {
+            document.getElementById("state-list").innerHTML = ""
+            content = ""
+            states.forEach(function(state, i) {
+                if (i == 0) {
+                    content += "<option selected id='" + state + "'>" + state + "</option>"
+                } else {
+                    content += "<option id='" + state + "'>" + state + "</option>";
+                }
+            })
+            document.getElementById("stateSelector").innerHTML = ""
+            document.getElementById("stateSelector").innerHTML = content
+        }
+
+    </script>
+    <h2>JS EC Answer:</h2>
+    <div id="answer">
+        <div style="display: flex; margin-bottom: 10px">
+            <select id="stateSelector" size="10"></select>
+            <div style="margin-left: 10px">
+                <button id="addButton">Add State</button>
+                <p>State List</p>
+                <ol id="state-list"></ol>
+            </div>
+        </div>
+    </div>
+    <div style="height: 50px; width: 100px; border: 2px solid black; display: flex; justify-content: center;">
+        <button id="clearState" value="Clear States" style="height: 20px; margin-top: 15px">Clear States</button>
+    </div>
+</body>
+</html>

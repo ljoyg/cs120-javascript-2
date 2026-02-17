@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 2.4</title>
+</head>
+<body>
+    <script language="javascript">
+        function speak(prefix) {
+            with(document.forms[0]) {
+                username = name.value;
+            }
+            alert(prefix + " " + username)
+        }
+    </script>
+    <h2>JS 2.4 Answer:</h2>
+    <div id="answer">
+        <form>
+            <label>Please enter your name: </label><input type="text" name="name" id="name"><br/>
+            <input type="button" id="hello" name="hello" value="Hello" onclick="speak(value)">
+            <input type="button" id="good-bye" name="good-bye" value="Good Bye" onclick="speak(value)">
+            <input type="button" id="greetings" name="greetings" value="Greetings" onclick="speak(value)">
+        </form>
+    </div>
+</body>
+</html>

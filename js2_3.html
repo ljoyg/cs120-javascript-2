@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 2.3</title>
+</head>
+<body>
+    <script language="javascript">
+        window.onload = function() {
+            nameStr = "Leona, Syd, Alex, William, Sam";
+            nameArr = nameStr.split(', ')
+            content = "<ol class='list'>"
+            nameArr.forEach(function(item) {
+                content += "<li>" + item + "</li>";
+            })
+            content += "</ol>";
+            document.getElementById("answer").innerHTML = content
+        }
+    </script>
+    <h2>JS 2.3 Answer:</h2>
+    <div id="answer"></div>
+</body>
+</html>

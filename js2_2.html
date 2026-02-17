@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 2.2</title>
+</head>
+<body>
+    <script language="javascript">
+        window.onload = function() {
+            sentence = prompt("Please provide a sentence:")
+            sent_arr = sentence.split(' ')
+            document.getElementById("answer").innerHTML = String(sent_arr.length);
+        }
+    </script>
+    <h2>JS 2.2 Answer:</h2>
+    <div id="answer"></div>
+</body>
+</html>
