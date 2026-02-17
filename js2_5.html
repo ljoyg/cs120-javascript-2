@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 2.5</title>
+</head>
+<body>
+    <script language="javascript">
+        window.onload = function() {
+            document.getElementById("hello").onclick = speak;
+            document.getElementById("good-bye").onclick = speak;
+            document.getElementById("greetings").onclick = speak;
+        }
+
+        function speak(e) {
+            with(document.forms[0]) {
+                username = name.value;
+            }
+            document.getElementById("popup-text").innerHTML = e.target.value + " " + username
+            document.getElementById("popup-box").showModal();
+        }
+
+    </script>
+    <h2>JS 2.5 Answer:</h2>
+    <div id="answer">
+        <form>
+            <label>Please enter your name: </label><input type="text" name="name" id="name"><br/>
+            <input type="button" id="hello" name="hello" value="Hello">
+            <input type="button" id="good-bye" name="good-bye" value="Good Bye">
+            <input type="button" id="greetings" name="greetings" value="Greetings">
+        </form>
+        <dialog class="popup-box" id="popup-box">
+            <div class="popup-content">
+                <h2 id="popup-text"></h2>
+                <button id="close-popup" onclick="document.getElementById('popup-box').close()">Close</button>
+            </div>
+        </dialog>
+    </div>
+</body>
+</html>
